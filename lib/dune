@@ -1,0 +1,4 @@
+(library
+ (name hrw_hashing)
+ (public_name hrw-hashing)
+ (libraries))

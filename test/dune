@@ -1,0 +1,4 @@
+(tests
+ (names hrw_hashing_test)
+ (package hrw-hashing)
+ (libraries alcotest hrw_hashing))
