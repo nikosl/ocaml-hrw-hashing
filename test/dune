@@ -1,4 +1,4 @@
-(tests
- (names hrw_hashing_test)
- (package hrw-hashing)
- (libraries alcotest hrw_hashing))
+(test
+ (name hrw_hashing_test)
+ (libraries alcotest hrw-hashing)
+ (action (run %{test} -e)))

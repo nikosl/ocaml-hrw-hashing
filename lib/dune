@@ -1,4 +1,6 @@
 (library
  (name hrw_hashing)
  (public_name hrw-hashing)
- (libraries))
+ (libraries core)
+ (preprocess
+  (pps ppx_jane)))
