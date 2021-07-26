@@ -1,19 +1,13 @@
 # hrw-hashing
 
- highest random weight (HRW) hashing
+Highest random weight (HRW) hashing.[^1]
 
 ## Installation
 
 ### Using Opam
 
 ```bash
-opam install inquire
-```
-
-### Using Esy
-
-```bash
-esy add @opam/inquire
+opam install https://github.com/nikosl/ocaml-hrw-hashing
 ```
 
 ## Usage
@@ -21,9 +15,15 @@ esy add @opam/inquire
 ### In OCaml
 
 ```ocaml
-let () = Hrw_hashing.greet "World"
+let () =
+  let sts = Hrw_hashing.create "A" in
+  Hrw_hashing.add sts "n1";
+  Hrw_hashing.add sts "n2";
+  Hrw_hashing.add sts "n3";
+  Hrw_hashing.add sts "n4";
+  let c = Hrw_hashing.candidates sts "key" in
+  let ids = Hrw_hashing.candidates_to_id_list c in
+  List.iter (Printf.printf "%s\n") ids
 ```
 
-## Contributing
-
-Take a look at our [Contributing Guide](CONTRIBUTING.md).
+[^1]: [Rendezvous hashing](https://en.wikipedia.org/wiki/Rendezvous_hashing)
